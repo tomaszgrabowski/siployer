@@ -15,20 +15,18 @@
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-[Xx]64/
-[Xx]86/
-[Bb]uild/
+x64/
+x86/
+build/
 bld/
-[Bb]in/
-[Oo]bj/
+bin/
+Bin/
+obj/
+Obj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
-# Uncomment if you have tasks that create the project's static files in wwwroot
-#wwwroot/
-
-#Typescript build files
-*.js.map
+/wwwroot/dist/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -42,10 +40,6 @@ TestResult.xml
 [Dd]ebugPS/
 [Rr]eleasePS/
 dlldata.c
-
-# DNX
-project.lock.json
-artifacts/
 
 *_i.c
 *_p.c
@@ -83,7 +77,6 @@ ipch/
 *.opensdf
 *.sdf
 *.cachefile
-*.VC.db
 
 # Visual Studio profiler
 *.psess
@@ -115,7 +108,6 @@ _TeamCity*
 _NCrunch_*
 .*crunch*.local.xml
 nCrunchTemp_*
-*.ncrunchproject
 
 # MightyMoose
 *.mm.*
@@ -143,11 +135,9 @@ publish/
 # Publish Web Output
 *.[Pp]ublish.xml
 *.azurePubxml
-
-# TODO: Un-comment the next line if you do not want to checkin 
-# your web deploy settings because they may include unencrypted
-# passwords
-#*.pubxml
+# TODO: Comment the next line if you want to checkin your web deploy settings
+# but database connection strings (with potential passwords) will be unencrypted
+*.pubxml
 *.publishproj
 
 # NuGet Packages
@@ -158,9 +148,6 @@ publish/
 !**/packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/packages/repositories.config
-# NuGet v3's project.json files produces more ignoreable files
-*.nuget.props
-*.nuget.targets
 
 # Microsoft Azure Build Output
 csx/
@@ -185,15 +172,15 @@ BundleArtifacts/
 
 # Others
 ClientBin/
-[Ss]tyle[Cc]op.*
 ~$*
 *~
 *.dbmdl
 *.dbproj.schemaview
 *.pfx
 *.publishsettings
-node_modules/
 orleans.codegen.cs
+
+/node_modules
 
 # RIA/Silverlight projects
 Generated_Code/
@@ -238,46 +225,8 @@ FakesAssemblies/
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
 
-# LightSwitch generated files
-GeneratedArtifacts/
-ModelManifest.xml
-
 # Paket dependency manager
 .paket/paket.exe
 
 # FAKE - F# Make
 .fake/
-Itas.Processes.crdata
-Itas.Processes.WebSite/Content/public/
-
-#TypeScript
-*.js.map
-
-Itas.Processes.WebSite/Content/Components/**/*.js
-Itas.Processes.WebSite/Content/Layouts/ProcessesLayout/*.js
-Itas.Processes.WebSite/Content/Enums/**/*.js
-Itas.Processes.WebSite/Content/Models/**/*.js
-Itas.Processes.WebSite/Content/PageScripts/**/*.js
-Itas.Processes.WebSite/Content/Typings/**/*.js
-Itas.Processes.WebSite/Content/Utils/**/*.js
-Itas.Processes.WebSite/Content/Widgets/**/*.js
-
-/.idea/.idea.Processes/.idea/.name
-/.idea/.idea.Processes/.idea/contentModel.xml
-/.idea/.idea.Processes/.idea/modules.xml
-/.idea/.idea.Processes/.idea/vcs.xml
-/.idea/.idea.Processes/.idea/workspace.xml
-/.idea/.idea.Processes/riderModule.iml
-/.idea/config/applicationhost.config
-
-/Itas.Processes.SeleniumTests/Hunspellx64.dll
-/Itas.Processes.SeleniumTests/Hunspellx86.dll
-/Itas.Processes.SeleniumTests/Mono.Cecil.dll
-/Itas.Processes.SeleniumTests/Mono.Cecil.Mdb.dll
-/Itas.Processes.SeleniumTests/Mono.Cecil.Pdb.dll
-/Itas.Processes.SeleniumTests/Mono.Cecil.Rocks.dll
-/Itas.Processes.SeleniumTests/nunit.engine.api.dll
-/Itas.Processes.SeleniumTests/nunit.engine.dll
-/Itas.Processes.SeleniumTests/NUnit3.TestAdapter.dll
-/Itas.Processes.SeleniumTests/Dictionaries
-.idea/
