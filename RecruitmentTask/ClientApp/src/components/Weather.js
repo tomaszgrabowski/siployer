@@ -5,11 +5,17 @@ export class Weather extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { forecasts: [], loading: true };
-  }
-
-  componentDidMount() {
-    this.populateWeatherData();
+    this.state = {
+      forecasts: [
+        {
+          city: "Warsaw",
+          countryCode: "PL",
+          temperatureC: 0,
+          temperatureF: 0,
+          summary: "Hot"
+        }
+      ]
+    };
   }
 
   static renderForecastsTable(forecasts) {
@@ -40,25 +46,11 @@ export class Weather extends Component {
   }
 
   render() {
-    let contents = this.state.loading ? (
-      <p>
-        <em>Loading...</em>
-      </p>
-    ) : (
-      Weather.renderForecastsTable(this.state.forecasts)
-    );
-
     return (
       <div>
         <h1 style={{ marginBottom: "4rem" }}>Weather forecast excersize</h1>
-        {contents}
+        {Weather.renderForecastsTable(this.state.forecasts)}
       </div>
     );
-  }
-
-  async populateWeatherData() {
-    const response = await fetch("weatherforecast");
-    const data = await response.json();
-    this.setState({ forecasts: data, loading: false });
   }
 }
