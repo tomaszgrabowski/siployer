@@ -16,6 +16,11 @@ namespace RecruitmentTask.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        private static readonly string[] CityNames = new[]
+        {
+            "Boston", "Ankara", "Berlin", "Vienna", "Tallin", "Prague"
+        };
+
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
@@ -29,6 +34,7 @@ namespace RecruitmentTask.Controllers
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
+                City = CityNames[rng.Next(CityNames.Length)],
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
