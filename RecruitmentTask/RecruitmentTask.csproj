@@ -16,8 +16,22 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
+    <Content Include="ClientApp\tsconfig.json" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\models\Action.ts" />
+    <TypeScriptCompile Include="ClientApp\models\SortBy.ts" />
+    <TypeScriptCompile Include="ClientApp\src\components\Search.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\config.ts" />
+    <TypeScriptCompile Include="ClientApp\src\hooks\helpers.test.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\hooks\helpers.ts" />
+    <TypeScriptCompile Include="ClientApp\src\hooks\UseWeatherForecast.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\store\AppState.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\store\preferences\PreferencesActions.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\store\preferences\PreferencesReducer.tsx" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

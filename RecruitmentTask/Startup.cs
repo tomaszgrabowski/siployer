@@ -7,6 +7,8 @@ using Microsoft.Extensions.Hosting;
 
 namespace RecruitmentTask
 {
+    using Services;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -19,7 +21,10 @@ namespace RecruitmentTask
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.Configure<Config>(Configuration.GetSection("Api"));
+            services.AddHttpClient();
+            services.AddTransient<IGeoCodingService, GeoCodingService>();
+            services.AddTransient<IWeatherService, WeatherService>();
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory
